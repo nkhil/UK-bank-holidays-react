@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   formatDate = string => {
-    return moment(string).format('MMM Do YYYY')
+    return moment(string).format('MMM Do, YYYY')
   }
 
   isHolidayInFuture = holiday => {
