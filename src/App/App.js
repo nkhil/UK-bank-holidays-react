@@ -14,29 +14,25 @@ class App extends Component {
     this.setState({ holidays })
   }
 
-  formatDate = string => {}
-
-  formatSimpleDate = string => {
-    return moment(string).format('L')
+  formatDate = string => {
+    return moment(string).format('MMM Do YYYY')
   }
 
   isHolidayInFuture = holiday => {
-    if (
-      Date.parse(this.formatSimpleDate(holiday.date)) > Date.parse(new Date())
-    ) {
+    if (Date.parse(holiday.date) > Date.parse(new Date())) {
       return true
     }
-    return false
   }
+
   render() {
     return (
       <Fragment>
-        <h1>Hello, Jay</h1>
+        <h1>UK Bank Holidays</h1>
         {this.state.holidays.map(holiday => {
           if (this.isHolidayInFuture(holiday)) {
             return (
               <li key={holiday.date}>
-                {holiday.title} ({moment(holiday.date).format('MMM Do YYYY')})
+                {holiday.title} ({this.formatDate(holiday.date)})
               </li>
             )
           }
