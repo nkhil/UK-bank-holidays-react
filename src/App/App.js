@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import moment from 'moment'
 
 class App extends Component {
   state = {
@@ -13,20 +14,33 @@ class App extends Component {
     this.setState({ holidays })
   }
 
+  formatDate = string => {}
+
+  formatSimpleDate = string => {
+    return moment(string).format('L')
+  }
+
+  isHolidayInFuture = holiday => {
+    if (
+      Date.parse(this.formatSimpleDate(holiday.date)) > Date.parse(new Date())
+    ) {
+      return true
+    }
+    return false
+  }
   render() {
     return (
       <Fragment>
-        {console.log(this.state.holidays[0])}
         <h1>Hello, Jay</h1>
-        <ul>
-          {this.state.holidays.map(holiday => {
+        {this.state.holidays.map(holiday => {
+          if (this.isHolidayInFuture(holiday)) {
             return (
               <li key={holiday.date}>
-                {holiday.date} {holiday.title}
+                {holiday.title} ({moment(holiday.date).format('MMM Do YYYY')})
               </li>
             )
-          })}
-        </ul>
+          }
+        })}
       </Fragment>
     )
   }
