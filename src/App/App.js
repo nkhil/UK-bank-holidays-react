@@ -19,7 +19,7 @@ class App extends Component {
   holidaysInTheFuture = holidays => {
     const futureHolidays = []
     holidays.map(holiday =>
-      this.isHolidayInFuture(holiday) ? futureHolidays.push(holiday) : ''
+      this.checkIfHolidayIsInFuture(holiday) ? futureHolidays.push(holiday) : ''
     )
     return futureHolidays
   }
@@ -28,14 +28,14 @@ class App extends Component {
     return moment(string).format('MMM Do, YYYY')
   }
 
-  isHolidayInFuture = holiday => {
+  checkIfHolidayIsInFuture = holiday => {
     if (Date.parse(holiday.date) > Date.parse(new Date())) {
       return true
     }
   }
 
   createHolidayList = holiday => {
-    if (this.isHolidayInFuture(holiday)) {
+    if (this.checkIfHolidayIsInFuture(holiday)) {
       return (
         <li key={holiday.date}>
           {holiday.title} ({this.formatDate(holiday.date)})
