@@ -28,3 +28,16 @@ test('holidaysInTheFuture()', () => {
   ]
   expect(componentInstance.holidaysInTheFuture(holidays)).toEqual([])
 })
+
+test('holidaysInTheFuture() 2', () => {
+  const component = renderer.create(<App />)
+  const componentInstance = component.getInstance()
+  const holidays = [
+    { date: '2099-01-01', title: 'test' },
+    { date: '2019-01-01', title: 'test' },
+  ]
+  const expectedHoliday = [{ date: '2099-01-01', title: 'test' }]
+  expect(componentInstance.holidaysInTheFuture(holidays)).toEqual(
+    expectedHoliday
+  )
+})
