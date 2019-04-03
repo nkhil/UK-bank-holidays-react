@@ -49,3 +49,10 @@ test('createHolidayList', () => {
   const test = componentInstance.createHolidayList(holiday)
   expect(test).toBeTruthy()
 })
+
+test('checkIfHolidayIsInFuture()', () => {
+  const component = renderer.create(<App />)
+  const componentInstance = component.getInstance()
+  const holiday = { date: '2019-01-01', title: 'test' }
+  expect(componentInstance.checkIfHolidayIsInFuture(holiday)).toEqual(false)
+})

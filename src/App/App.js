@@ -32,6 +32,7 @@ class App extends Component {
     if (Date.parse(holiday.date) > Date.parse(new Date())) {
       return true
     }
+    return false
   }
 
   createHolidayList = holiday => {
