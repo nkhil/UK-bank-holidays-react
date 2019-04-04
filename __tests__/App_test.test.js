@@ -1,5 +1,5 @@
 import React from 'react'
-import '@babel/polyfill'
+// import '@babel/polyfill'
 import App from '../src/App/App'
 import { create } from 'react-test-renderer'
 import renderer from 'react-test-renderer'
