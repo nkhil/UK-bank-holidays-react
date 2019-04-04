@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import moment from 'moment'
 
+import GlobalStyle from './styled_components/GlobalStyles'
+
 class App extends Component {
   state = {
     holidays: [],
@@ -49,6 +51,7 @@ class App extends Component {
     return (
       <Fragment>
         {console.log(this.state.futureHolidays)}
+        <GlobalStyle />
         <p>The next bank holiday is in</p>
         <h1>
           {this.state.futureHolidays.length !== 0
