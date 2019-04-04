@@ -13,6 +13,15 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.8;
     font-size: 1.1rem;
   }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 0;
+  }
 `
 
 export default GlobalStyle
