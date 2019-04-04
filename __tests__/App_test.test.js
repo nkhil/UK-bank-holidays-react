@@ -12,13 +12,6 @@ test('App renders correctly', () => {
   expect(app).toMatchSnapshot()
 })
 
-test('formatDate()', () => {
-  const component = renderer.create(<App />)
-  const componentInstance = component.getInstance()
-  const formattedDate = 'Apr 19th, 2019'
-  expect(componentInstance.formatDate('2019-04-19')).toEqual(formattedDate)
-})
-
 test('holidaysInTheFuture()', () => {
   const component = renderer.create(<App />)
   const componentInstance = component.getInstance()
@@ -42,12 +35,11 @@ test('holidaysInTheFuture() 2', () => {
   )
 })
 
-test('createHolidayList', () => {
+test('formatDate()', () => {
   const component = renderer.create(<App />)
   const componentInstance = component.getInstance()
-  const holiday = { date: '2019-04-19', title: 'test' }
-  const test = componentInstance.createHolidayList(holiday)
-  expect(test).toBeTruthy()
+  const formattedDate = 'Apr 19th, 2019'
+  expect(componentInstance.formatDate('2019-04-19')).toEqual(formattedDate)
 })
 
 test('checkIfHolidayIsInFuture()', () => {
@@ -55,4 +47,12 @@ test('checkIfHolidayIsInFuture()', () => {
   const componentInstance = component.getInstance()
   const holiday = { date: '2019-01-01', title: 'test' }
   expect(componentInstance.checkIfHolidayIsInFuture(holiday)).toEqual(false)
+})
+
+test('createHolidayList', () => {
+  const component = renderer.create(<App />)
+  const componentInstance = component.getInstance()
+  const holiday = { date: '2019-04-19', title: 'test' }
+  const test = componentInstance.createHolidayList(holiday)
+  expect(test).toBeTruthy()
 })
