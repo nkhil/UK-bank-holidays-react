@@ -32,7 +32,15 @@ class App extends Component {
   }
 
   formatDate = string => {
-    return moment(string).format('MMM Do, YYYY')
+    return moment(string).format('D MMMM')
+  }
+
+  returnYear = string => {
+    return moment(string).format('YYYY')
+  }
+
+  returnDay = string => {
+    return moment(string).format('dddd')
   }
 
   checkIfHolidayIsInFuture = holiday => {
@@ -49,6 +57,8 @@ class App extends Component {
           key={holiday.date}
           details={holiday}
           formatDate={this.formatDate}
+          returnYear={this.returnYear}
+          returnDay={this.returnDay}
         />
       )
     }
