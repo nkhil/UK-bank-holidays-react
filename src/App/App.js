@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import moment from 'moment'
 import Header from './components/Header'
+import Holidaylist from './components/HolidayList'
 import GlobalStyle from './styled_components/GlobalStyles'
 
 class App extends Component {
@@ -55,15 +56,10 @@ class App extends Component {
           futureHolidays={this.state.futureHolidays}
           formatDate={this.formatDate}
         />
-        <h2>
-          List of upcoming bank holidays in {new Date().getUTCFullYear()} and{' '}
-          {new Date().getUTCFullYear() + 1}
-        </h2>
-        <ul>
-          {this.state.futureHolidays.map(holiday => {
-            return this.createHolidayList(holiday)
-          })}
-        </ul>
+        <Holidaylist
+          futureHolidays={this.state.futureHolidays}
+          createHolidayList={this.createHolidayList}
+        />
       </Fragment>
     )
   }
