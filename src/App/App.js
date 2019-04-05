@@ -3,7 +3,11 @@ import moment from 'moment'
 import Header from './components/Header'
 import Holidaylist from './components/HolidayList'
 import HolidayItem from './components/HolidayItem'
+
+// Styles and elements
 import GlobalStyle from './styled_components/GlobalStyles'
+import Container from './styled_components/elements/Container'
+import Flex from './styled_components/elements/Flex'
 
 class App extends Component {
   state = {
@@ -53,16 +57,19 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        {console.log(this.state.futureHolidays)}
         <GlobalStyle />
-        <Header
-          futureHolidays={this.state.futureHolidays}
-          formatDate={this.formatDate}
-        />
-        <Holidaylist
-          futureHolidays={this.state.futureHolidays}
-          createHolidayList={this.createHolidayList}
-        />
+        <Container>
+          <Flex column contentCenter alignCenter>
+            <Header
+              futureHolidays={this.state.futureHolidays}
+              formatDate={this.formatDate}
+            />
+            <Holidaylist
+              futureHolidays={this.state.futureHolidays}
+              createHolidayList={this.createHolidayList}
+            />
+          </Flex>
+        </Container>
       </Fragment>
     )
   }
