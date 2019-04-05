@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import moment from 'moment'
 import Header from './components/Header'
 import Holidaylist from './components/HolidayList'
+import HolidayItem from './components/HolidayItem'
 import GlobalStyle from './styled_components/GlobalStyles'
 
 class App extends Component {
@@ -40,9 +41,11 @@ class App extends Component {
   createHolidayList = holiday => {
     if (this.checkIfHolidayIsInFuture(holiday)) {
       return (
-        <li key={holiday.date}>
-          {holiday.title} ({this.formatDate(holiday.date)})
-        </li>
+        <HolidayItem
+          key={holiday.date}
+          details={holiday}
+          formatDate={this.formatDate}
+        />
       )
     }
   }
