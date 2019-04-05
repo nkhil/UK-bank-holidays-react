@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Flex = styled.div`
-  background-color: grey;
   display: flex;
 
   flex-wrap: ${props => {

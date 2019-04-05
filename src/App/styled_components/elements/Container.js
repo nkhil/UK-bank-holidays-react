@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  background-color: pink;
-
   padding-left: ${props => {
     if (props.full) return 0
     return 'calc((100vw - 700px) / 2)'
