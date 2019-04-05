@@ -55,11 +55,9 @@ class App extends Component {
         <p>The next bank holiday is in</p>
         <h1>
           {this.state.futureHolidays.length !== 0
-            ? this.state.futureHolidays[0].title +
-              ' ' +
-              '(' +
-              this.formatDate(this.state.futureHolidays[0].date) +
-              ')'
+            ? `${this.state.futureHolidays[0].title} (${this.formatDate(
+                this.state.futureHolidays[0].date
+              )})`
             : 'Loading...'}
         </h1>
         <h2>
