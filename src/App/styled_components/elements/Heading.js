@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 const baseStyle = css`
   margin-bottom: ${props => props.noMargin && '0'};
   color: #202020;
-  font-weight: 300;
+  font-weight: 500;
   margin-top: 0;
   text-align: ${props => {
     if (props.center) return 'center'
@@ -36,7 +36,7 @@ const HeadingTwo = styled.h2`
 const HeadingThree = styled.h3`
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   ${baseStyle};
 `
 
