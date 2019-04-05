@@ -23,6 +23,19 @@ const GlobalStyle = createGlobalStyle`
     text-align: left;
     background-color: #f8f9fa;
   }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid blue;
+
+    &:hover {
+      border-bottom: 0;
+    }
+
+    $:visited {
+      color: inherit;
+    }
+  }
 `
 
 export default GlobalStyle
