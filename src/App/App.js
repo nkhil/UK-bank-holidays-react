@@ -5,7 +5,6 @@ import GlobalStyle from './styled_components/GlobalStyles'
 
 class App extends Component {
   state = {
-    holidays: [],
     futureHolidays: [],
   }
 
