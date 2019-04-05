@@ -6,9 +6,12 @@ class HolidayItem extends PureComponent {
     const { title, date } = this.props.details
     return (
       <Fragment>
-        <Li center>
-          {title} ({this.props.formatDate(date)})
-        </Li>
+        <tr>
+          <td>{this.props.formatDate(date)}</td>
+          <td>{this.props.returnYear(date)}</td>
+          <td>{this.props.returnDay(date)}</td>
+          <td>{title}</td>
+        </tr>
       </Fragment>
     )
   }

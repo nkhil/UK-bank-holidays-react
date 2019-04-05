@@ -9,11 +9,13 @@ class HolidayList extends PureComponent {
           List of upcoming bank holidays in {new Date().getUTCFullYear()} and{' '}
           {new Date().getUTCFullYear() + 1}
         </Heading>
-        <ul>
-          {this.props.futureHolidays.map(holiday => {
-            return this.props.createHolidayList(holiday)
-          })}
-        </ul>
+        <table>
+          <tbody>
+            {this.props.futureHolidays.map(holiday => {
+              return this.props.createHolidayList(holiday)
+            })}
+          </tbody>
+        </table>
       </Fragment>
     )
   }

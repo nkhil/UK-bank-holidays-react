@@ -17,6 +17,12 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
     padding: 0;
   }
+
+  th, td {
+    padding: 15px;
+    text-align: left;
+    background-color: #f8f9fa;
+  }
 `
 
 export default GlobalStyle
