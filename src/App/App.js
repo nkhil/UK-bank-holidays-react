@@ -3,6 +3,7 @@ import moment from 'moment'
 import Header from './components/Header'
 import Holidaylist from './components/HolidayList'
 import HolidayItem from './components/HolidayItem'
+import Footer from './components/Footer'
 
 // Styles and elements
 import GlobalStyle from './styled_components/GlobalStyles'
@@ -78,6 +79,7 @@ class App extends Component {
               futureHolidays={this.state.futureHolidays}
               createHolidayList={this.createHolidayList}
             />
+            <Footer />
           </Flex>
         </Container>
       </Fragment>
