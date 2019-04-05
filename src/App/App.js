@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import moment from 'moment'
-
+import Header from './components/Header'
 import GlobalStyle from './styled_components/GlobalStyles'
 
 class App extends Component {
@@ -51,14 +51,10 @@ class App extends Component {
       <Fragment>
         {console.log(this.state.futureHolidays)}
         <GlobalStyle />
-        <p>The next bank holiday is in</p>
-        <h1>
-          {this.state.futureHolidays.length !== 0
-            ? `${this.state.futureHolidays[0].title} (${this.formatDate(
-                this.state.futureHolidays[0].date
-              )})`
-            : 'Loading...'}
-        </h1>
+        <Header
+          futureHolidays={this.state.futureHolidays}
+          formatDate={this.formatDate}
+        />
         <h2>
           List of upcoming bank holidays in {new Date().getUTCFullYear()} and{' '}
           {new Date().getUTCFullYear() + 1}
