@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "parcel index.html",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "updatesnapshot": "jest --update-snapshot"
   },
   "keywords": [],
   "author": "",
