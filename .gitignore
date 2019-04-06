@@ -4,3 +4,4 @@ coverage/
 .cache/
 .DS*
 __tests__/__snapshots__
+build/
