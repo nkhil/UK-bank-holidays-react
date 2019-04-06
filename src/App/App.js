@@ -5,7 +5,7 @@ import Holidaylist from './components/HolidayList'
 import HolidayItem from './components/HolidayItem'
 import Footer from './components/Footer'
 
-// Styles and elements
+// styles and elements
 import GlobalStyle from './styled_components/GlobalStyles'
 import Container from './styled_components/elements/Container'
 import Flex from './styled_components/elements/Flex'

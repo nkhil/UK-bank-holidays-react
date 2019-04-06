@@ -14,7 +14,7 @@ class Footer extends PureComponent {
             Made with <Emoji symbol="❤️" label="love" /> by{' '}
             <a target="_blank" href="http://nikhilvijayan.com">
               Nikhil Vijayan
-            </a>
+            </a>{' '}
             <Emoji symbol="👋" label="wave" />
           </Heading>
           <P center>
