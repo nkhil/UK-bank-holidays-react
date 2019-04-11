@@ -15,7 +15,7 @@ class App extends Component {
     futureHolidays: [],
   }
 
-  async componentWillMount() {
+  componentWillMount = async () => {
     const endpoint = 'https://www.gov.uk/bank-holidays.json'
     const response = await fetch(endpoint)
     const json = await response.json()
@@ -65,10 +65,11 @@ class App extends Component {
     }
   }
 
-  render() {
+  render = ()=>  {
     return (
       <Fragment>
         <GlobalStyle />
+        {console.log(this.state.futureHolidays)}
         <Container>
           <Flex column contentCenter alignCenter>
             <Header
