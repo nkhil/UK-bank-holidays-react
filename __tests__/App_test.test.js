@@ -3,7 +3,6 @@ import React from 'react'
 import App from '../src/App/App'
 import { create } from 'react-test-renderer'
 import renderer from 'react-test-renderer'
-
 require('react-router-dom')
 jest.mock('react-router-dom')
 
